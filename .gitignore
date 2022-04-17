@@ -1,0 +1,13 @@
+### Django ###
+*.log
+*.pot
+*.pyc
+
+# variable for settings.py
+.env
+
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media

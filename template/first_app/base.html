@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="{{ LANGUAGE_CODE|default:"en-us" }}">
+<head>
+<meta charset="UTF-8">
+<title>{% block title %}{% endblock %}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="{% static 'css/main.css' %}"/>
+<!-- Google Font !-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,800;1,700&display=swap" rel="stylesheet">
+<!-- Responsive Design !-->
+<meta name=”viewport” content=”width=device-width,initial-scale=1.0″>
+{% block extrahead %}{% endblock %}
+</head>
+<body>
+
+  <!-- Upper Contents !-->
+    <div class='top'>
+        <div class="wrapper">
+          <div class="column">
+            <div class="info">
+                <div class="main_box">
+                    <h1 class="form">Simply Weather</h1>
+                    <p class="form">View the current weather for area you want to know</p>
+                    <form action="{% url 'forecast' %}" method="POST" enctype="multipart/form-data">
+                      {% csrf_token %}
+                        <div class="form">
+                            <div class="text_box">
+                                <label for="model" class="ef">
+                                    <input type="text" name="city" placeholder="City"/>
+                                </label>
+                            </div>
+                            <br><br>
+                            <div class="form">
+                                <button type="submit" class="submit_button" name='action' value="save">CHECK WEATHER</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="info">
+                <div class="sub_box">
+                    <div id="sub_column">
+                        {% block daily_content %}
+                        <!-- Display daily weather  !-->
+                        {% endblock %}
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    <!-- Lower Content !-->
+    <div class='bottom'>
+        <div class="weather_box">
+            <!-- <div class="result_box"> !-->
+              {% block hour_content %}
+                <!-- Display hourly weather  !-->
+              {% endblock %}
+
+        </div>
+    </div>
+</body>
+</html>

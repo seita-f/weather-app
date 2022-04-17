@@ -1,0 +1,44 @@
+{% extends "first_app/base.html" %}
+
+{% block title %}MyAPI{% endblock title %}
+
+{% block daily_content %}
+
+    <div id="sub_left_box">
+        {% if message %}
+            <h1 class="NotFound">{{ message }}</h1>
+        {% else %}
+            <h2>{{ weather.city }}</h2>
+            <img class="logo" src="http://openweathermap.org/img/w/{{ weather.icon }}.png">
+            <h3>{{ weather.timezone }}</h3>
+            <h2>Low:{{ weather.min_temp }}℃ / High:{{ weather.max_temp }}℃</h2>
+        {% endif %}
+    </div>
+    <div id="sub_right_box">
+        <h4>WEATHER: {{ weather.description }}</h4>
+        <h4>FEELS LIKE: {{ weather.feels_like }}℃</h4>
+        <h4>HUMIDITY: {{ weather.humidity }}%</h4>
+        <h4>PRESSURE: {{ weather.pressure }} hPa</h4>
+        <h4>WIND: {{ weather.wind_speed }} km/h</h4>
+    </div>
+
+{% endblock %}
+
+{% block hour_content %}
+
+    <div id="item_flex">
+        {% if message %}
+            <h1>{{ message }}</h1>
+        {% else %}
+            {% for item in weather_details %}
+                <div class="item">
+                    <h4 clss="item_text">{{ item.0 }}</h4>
+                    <img class="tiny_logo" src="http://openweathermap.org/img/w/{{ item.3 }}.png">
+                    <h4 class="item_text">{{ item.1 }} ℃</h4>
+                    <h4 class="item_text">{{ item.2 }}</h4>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+{% endblock %}
