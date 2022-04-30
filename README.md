@@ -2,7 +2,6 @@ This is weather searching website and I added the following functions　　
 
 ・User can input city's name and weather of its city is displayed (used API in python). If its city is not exist, then error message returned. 
   Default city is Warsaw.
-・Responsibe design
 
 Image:
 
