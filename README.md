@@ -1,7 +1,13 @@
+// English // <br>
 This is weather searching website and I added the following functions　　
 
 ・User can input city's name and weather of its city is displayed (used API in python). If its city is not exist, then error message returned. 
   Default city is Warsaw.
+<br><br>
+
+// 日本語 //
+- APIを使用して、都市名(英語)を入力すると、その都市の現在の天気, 気温などを表示するようにしました。また天気のロゴも天気によって変わるよう工夫しました。都市名に誤りがある場合はエラーを表示します。
+
 
 Image:
 
