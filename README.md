@@ -1,5 +1,5 @@
 # Weather App
-This is weather searching website and I added the following functions. <br>　　
+This is weather searching website and I added the following functions.<br>
 User can input city's name and weather of its city is displayed (used API in python). <br>
 If its city is not exist, then error message returned. Default city is Warsaw. <br>
 
